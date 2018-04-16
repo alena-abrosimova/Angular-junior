@@ -41,6 +41,7 @@ import {MatAutocompleteModule,
   MatTooltipModule,
   MatStepperModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NgxHideDirective } from './directives/ngx-hide.directive';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   declarations: [
     AppComponent,
-    CheckBoxPassComponent
+    CheckBoxPassComponent,
+    NgxHideDirective
   ],
   imports: [
     BrowserModule,

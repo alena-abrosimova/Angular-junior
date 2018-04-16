@@ -2,4 +2,10 @@
 <div class="mat mat-app-background basic-container">
   <app-check-box-pass></app-check-box-pass>
 </div>
-
+<div>
+  <p appNgxHide [ngxHide]="ngxHide">Test element</p>
+  <mat-checkbox [(ngModel)]="ngxHide">
+    <span *ngIf="!ngxHide">Скрыть текст</span>
+    <span *ngIf="ngxHide">Показать текст</span>
+  </mat-checkbox>
+</div>
