@@ -8,6 +8,7 @@ import {
 @Directive({
   selector: '[appNgxHide]'
 })
+
 export class NgxHideDirective {
   @Input() ngxHide: boolean;
   constructor(private el: ElementRef)  {
