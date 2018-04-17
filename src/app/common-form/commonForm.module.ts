@@ -1,14 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-
-import { AppComponent } from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {UIRouterModule} from '@uirouter/angular';
-import {HttpModule} from '@angular/http';
-import {HttpClientModule} from '@angular/common/http';
-import {MatAutocompleteModule,
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {
+  MatAutocompleteModule,
   MatButtonModule,
   MatButtonToggleModule,
   MatCardModule,
@@ -28,25 +21,26 @@ import {MatAutocompleteModule,
   MatProgressSpinnerModule,
   MatRadioModule,
   MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
+  MatSelectModule, MatSidenavModule,
   MatSliderModule,
   MatSlideToggleModule,
   MatSnackBarModule,
   MatSortModule,
+  MatStepperModule,
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
-  MatTooltipModule,
-  MatStepperModule} from '@angular/material';
+  MatTooltipModule
+} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { NgxHideDirective } from './directives/ngx-hide.directive';
-import {CommonModule} from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpModule} from '@angular/http';
+import {UIRouterModule} from '@uirouter/angular';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { CommonFormComponent } from './common-form/common-form.component';
-import {CommonFormModule} from './common-form/commonForm.module';
-import {CheckBoxPassComponent} from './common-form/check-box-pass/check-box-pass.component';
-
+import {CommonFormComponent} from './common-form.component';
 
 @NgModule({
   exports: [
@@ -83,10 +77,6 @@ import {CheckBoxPassComponent} from './common-form/check-box-pass/check-box-pass
     MatStepperModule
   ],
   declarations: [
-    AppComponent,
-    NgxHideDirective,
-    CommonFormComponent,
-    CheckBoxPassComponent
   ],
   imports: [
     BrowserModule,
@@ -129,11 +119,11 @@ import {CheckBoxPassComponent} from './common-form/check-box-pass/check-box-pass
     MatToolbarModule,
     MatTooltipModule,
     MatStepperModule,
-    CommonModule,
-    CommonFormModule
+    CommonModule
 
-],
+  ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [CommonFormComponent]
 })
-export class AppModule { }
+
+export class CommonFormModule {}
