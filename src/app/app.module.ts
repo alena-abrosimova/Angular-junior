@@ -45,7 +45,6 @@ import {CommonModule} from '@angular/common';
 
 import { CommonFormComponent } from './common-form/common-form.component';
 import {CommonFormModule} from './common-form/commonForm.module';
-import {CheckBoxPassComponent} from './common-form/check-box-pass/check-box-pass.component';
 
 
 @NgModule({
@@ -86,7 +85,6 @@ import {CheckBoxPassComponent} from './common-form/check-box-pass/check-box-pass
     AppComponent,
     NgxHideDirective,
     CommonFormComponent,
-    CheckBoxPassComponent
   ],
   imports: [
     BrowserModule,

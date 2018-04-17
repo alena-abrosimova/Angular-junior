@@ -1,3 +1,15 @@
-<div class="mat mat-app-background basic-container">
-  <app-check-box-pass></app-check-box-pass>
-</div>
+
+  <div class="mat mat-app-background basic-container">
+    <mat-form-field>
+      <input  matInput type="email" placeholder="Логин">
+    </mat-form-field>
+    <mat-form-field>
+      <input  matInput [type]="passType" placeholder="Пароль" [(ngModel)]="password">
+    </mat-form-field>
+    <mat-checkbox [(ngModel)]="hidePassword" (click)="onClick()">
+      <span *ngIf="hidePassword">Скрывать пароль</span>
+      <span *ngIf="!hidePassword">Показывать пароль</span>
+    </mat-checkbox>
+  </div>
+
+

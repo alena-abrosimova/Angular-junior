@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommonFormComponent implements OnInit {
 
-  constructor() { }
+  hidePassword = true;
+  password = '';
+  passType = 'password';
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  onClick() {
+    if (this.passType === 'password') {
+      this.passType = 'text';
+    } else {
+      this.passType = 'password';
+    }
   }
 
 }
