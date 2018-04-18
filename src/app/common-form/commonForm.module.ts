@@ -120,7 +120,6 @@ import {CommonFormComponent} from './common-form.component';
     MatTooltipModule,
     MatStepperModule,
     CommonModule
-
   ],
   providers: [],
   bootstrap: [CommonFormComponent]

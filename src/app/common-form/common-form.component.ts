@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-common-form',
@@ -23,6 +24,10 @@ export class CommonFormComponent implements OnInit {
     } else {
       this.passType = 'password';
     }
+  }
+
+  submitForm(formLogin: NgForm) {
+    console.log('submitted', formLogin.value);
   }
 
 }
