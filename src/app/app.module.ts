@@ -45,6 +45,7 @@ import {CommonModule} from '@angular/common';
 
 import { CommonFormComponent } from './common-form/common-form.component';
 import {CommonFormModule} from './common-form/commonForm.module';
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 
 @NgModule({
@@ -85,6 +86,7 @@ import {CommonFormModule} from './common-form/commonForm.module';
     AppComponent,
     NgxHideDirective,
     CommonFormComponent,
+    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,
