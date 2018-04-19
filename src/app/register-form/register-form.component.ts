@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-register-form',
@@ -11,10 +12,17 @@ export class RegisterFormComponent implements OnInit {
   password = '';
   passType = 'password';
 
+  formRegister: FormGroup;
   constructor() {
   }
 
   ngOnInit() {
+    this.formRegister = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      username: new FormControl('', Validators.required),
+      pass: new FormControl('', [Validators.required, Validators.pattern('[A-z1-9]{6,100}'), Validators.minLength(6)]),
+      retypePass: new FormControl('', [Validators.required], this.checkForRePass.bind(this) )
+    });
   }
 
   onClick() {
@@ -29,5 +37,22 @@ export class RegisterFormComponent implements OnInit {
       this.hidePassword = 'Скрывать пароль';
     }
   }
+
+  onSubmit() {
+    console.log('Submited!', this.formRegister);
+  }
+
+  checkForRePass(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      if (this.formRegister.get('pass').value !== this.formRegister.get('retypePass').value) {
+        resolve({
+          'checkPass': true
+        });
+      } else {
+        resolve(null);
+      }
+    });
+ }
+
 
 }

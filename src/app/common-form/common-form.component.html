@@ -5,7 +5,7 @@
         <input
           matInput
           type="text"
-          placeholder="Логин"
+          placeholder="Email"
           class="form-control"
           ngModel
           name="email"
@@ -13,7 +13,11 @@
           email
           #email="ngModel"
         >
-        <mat-error *ngIf="email.invalid && email.touched">Введите корректный Email</mat-error>
+        <mat-error *ngIf="email.invalid && email.touched  && !email.errors['required']">Введите корректный
+          Email</mat-error>
+        <mat-error
+          *ngIf="email.invalid && email.touched && email.errors['required']">
+          Email не должен быть пустым</mat-error>
       </mat-form-field>
     </div>
     <div class="form-group">

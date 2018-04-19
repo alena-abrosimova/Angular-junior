@@ -1,13 +1,47 @@
 <div class="mat mat-app-background basic-container">
-  <form>
+  <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <mat-form-field>
-        <input matInput type="text" placeholder="Логин" class="form-control">
+        <input matInput type="text" placeholder="Email" class="form-control" formControlName="email">
+        <mat-error
+          *ngIf="formRegister.get('email').invalid && formRegister.get('email').touched && !formRegister.get('email').errors['required']">
+          Введите корректный Email</mat-error>
+        <mat-error
+          *ngIf="formRegister.get('email').invalid && formRegister.get('email').touched && formRegister.get('email').errors['required']">
+          Email не должен быть пустым</mat-error>
       </mat-form-field>
     </div>
     <div class="form-group">
       <mat-form-field>
-        <input matInput [type]="passType" placeholder="Пароль" class="form-control" [(ngModel)]="password">
+        <input matInput type="text" placeholder="Имя пользователя" class="form-control" formControlName="username">
+        <mat-error
+          *ngIf="formRegister.get('username').invalid && formRegister.get('username').touched">
+          Имя пользователя не должно быть пустым
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field>
+        <input matInput [type]="passType" placeholder="Пароль" class="form-control" [(ngModel)]="password"
+               formControlName="pass">
+        <mat-error *ngIf="formRegister.get('pass').invalid && formRegister.get('pass').touched &&
+        !formRegister.get('pass').errors['pattern'] && !formRegister.get('pass').errors['minlength']">
+          Пароль не может быть пустым</mat-error>
+        <mat-error *ngIf="formRegister.get('pass').invalid && formRegister.get('pass').touched &&
+        formRegister.get('pass').errors['pattern'] && !formRegister.get('pass').errors['minlength']">
+          Пароль должен содержать символы A-z 1-9
+        </mat-error>
+        <mat-error *ngIf="formRegister.get('pass').invalid && formRegister.get('pass').touched &&
+        formRegister.get('pass').errors['minlength']">
+          Длина пароля должна быть не менее 6 символов
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field>
+        <input matInput [type]="passType" placeholder="Повторите пароль" class="form-control" formControlName="retypePass">
+        <mat-error *ngIf="formRegister.get('retypePass').errors['checkPass']">Пароли не совпадают</mat-error>
+        <mat-hint *ngIf="!formRegister.get('retypePass').errors['checkPass'] && formRegister.get('retypePass').value!=''">Пароли совпадают</mat-hint>
       </mat-form-field>
     </div>
     <br>
@@ -17,7 +51,12 @@
     <br>
     <br>
     <div class="mat-button">
-      <button mat-raised-button color="primary">Register</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="formRegister.invalid"
+      >Register</button>
     </div>
   </form>
 </div>
