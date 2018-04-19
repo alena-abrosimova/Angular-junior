@@ -1,0 +1,23 @@
+<div class="mat mat-app-background basic-container">
+  <form>
+    <div class="form-group">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Логин" class="form-control">
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field>
+        <input matInput [type]="passType" placeholder="Пароль" class="form-control" [(ngModel)]="password">
+      </mat-form-field>
+    </div>
+    <br>
+    <mat-checkbox class="mat-checkbox" (click)="onClick()">
+      {{hidePassword}}
+    </mat-checkbox>
+    <br>
+    <br>
+    <div class="mat-button">
+      <button mat-raised-button color="primary">Register</button>
+    </div>
+  </form>
+</div>
