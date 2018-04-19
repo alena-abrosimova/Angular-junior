@@ -42,9 +42,8 @@
       </mat-form-field>
     </div>
     <br>
-      <mat-checkbox class="mat-checkbox" [(ngModel)]="hidePassword" (click)="onClick()">
-        <span *ngIf="hidePassword">Скрывать пароль</span>
-        <span *ngIf="!hidePassword">Показывать пароль</span>
+      <mat-checkbox class="mat-checkbox" (click)="onClick()">
+        {{hidePassword}}
       </mat-checkbox>
     <br>
     <br>
