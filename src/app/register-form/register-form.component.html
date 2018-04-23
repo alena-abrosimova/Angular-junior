@@ -40,8 +40,8 @@
     <div class="form-group">
       <mat-form-field>
         <input matInput [type]="passType" placeholder="Повторите пароль" class="form-control" formControlName="retypePass">
-        <mat-error *ngIf="formRegister.get('retypePass').errors['checkPass']">Пароли не совпадают</mat-error>
-        <mat-hint *ngIf="!formRegister.get('retypePass').errors['checkPass'] && formRegister.get('retypePass').value!=''">Пароли совпадают</mat-hint>
+        <mat-error *ngIf="formRegister.get('retypePass').errors && formRegister.get('retypePass').errors['checkPass']">Пароли не совпадают</mat-error>
+        <mat-hint *ngIf="!formRegister.get('retypePass').errors && formRegister.get('retypePass').value!=''">Пароли совпадают</mat-hint>
       </mat-form-field>
     </div>
     <br>
