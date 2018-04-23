@@ -21,7 +21,7 @@ export class RegisterFormComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       username: new FormControl('', Validators.required),
       pass: new FormControl('', [Validators.required, Validators.pattern('[A-z1-9]{6,100}'), Validators.minLength(6)]),
-      retypePass: new FormControl('', [Validators.required], this.checkForRePass.bind(this) )
+      retypePass: new FormControl('', Validators.required, this.checkForRePass.bind(this) )
     });
   }
 
@@ -44,7 +44,7 @@ export class RegisterFormComponent implements OnInit {
 
   checkForRePass(): Promise<any> {
     return new Promise((resolve, reject) => {
-      if (this.formRegister.get('pass').value !== this.formRegister.get('retypePass').value) {
+      if (this.formRegister.get('retypePass').value !== this.password) {
         resolve({
           'checkPass': true
         });
