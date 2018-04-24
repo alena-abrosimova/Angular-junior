@@ -42,17 +42,15 @@ export class RegisterFormComponent implements OnInit {
     console.log('Submited!', this.formRegister);
   }
 
-  checkForRePass(): Promise<any> {
-    return new Promise((resolve, reject) => {
-      if (this.formRegister.get('retypePass').value !== this.password) {
-        resolve({
-          'checkPass': true
-        });
-      } else {
-        resolve(null);
-      }
-    });
- }
-
-
+   checkForRePass(): Promise<any> {
+     return new Promise((resolve, reject) => {
+       if (this.formRegister.get('retypePass').value !== this.password) {
+         resolve({
+           'checkPass': true
+         });
+       } else {
+         resolve(null);
+       }
+     });
+  }
 }
