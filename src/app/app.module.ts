@@ -1,8 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
-import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {UIRouterModule} from '@uirouter/angular';
@@ -40,14 +37,15 @@ import {MatAutocompleteModule,
   MatTooltipModule,
   MatStepperModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { NgxHideDirective } from './shared/directives/ngx-hide.directive';
 import {CommonModule} from '@angular/common';
 
 import { CommonFormComponent } from './common-form/common-form.component';
 import {CommonFormModule} from './common-form/commonForm.module';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import {BackendModule} from './backendCommon/backend.module';
-
+import {UserService} from './userCommon/user.service';
+import { NgxHideDirective } from './shared/directives/ngx-hide.directive';
+import { AppComponent } from './app.component';
 
 @NgModule({
   exports: [
@@ -135,7 +133,7 @@ import {BackendModule} from './backendCommon/backend.module';
     BackendModule
 
 ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

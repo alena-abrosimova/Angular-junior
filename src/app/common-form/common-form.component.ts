@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 
+import {UserService} from '../userCommon/user.service';
+import {User} from '../shared/models/user.model';
+
 @Component({
   selector: 'app-common-form',
   templateUrl: './common-form.component.html',
@@ -11,8 +14,10 @@ export class CommonFormComponent implements OnInit {
   hidePassword = 'Показывать пароль';
   password = '';
   passType = 'password';
+  textMassage = '';
+  msgClass = 'error';
 
-  constructor() {
+  constructor(private userService: UserService) {
   }
 
   ngOnInit() {
@@ -32,7 +37,20 @@ export class CommonFormComponent implements OnInit {
   }
 
   submitForm(formLogin: NgForm) {
-    console.log('submitted', formLogin.value);
+    this.userService.getCurrentUserData(formLogin.value.email).subscribe((user: User) => {
+      if (user) {
+        if (user.password === this.password) {
+          this.textMassage = 'Логин: ' + user.email + ' . Пароль: ' + user.password + '. Имя: ' + user.name;
+          this.msgClass = 'hint';
+        } else {
+          this.textMassage = 'Пароль не верный';
+          this.msgClass = 'error';
+        }
+      } else {
+        this.textMassage = 'Пользователя не существует';
+        this.msgClass = 'error';
+      }
+    });
   }
 
 }
