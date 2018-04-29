@@ -8,7 +8,7 @@ import {NgForm} from '@angular/forms';
 })
 export class CommonFormComponent implements OnInit {
 
-  hidePassword = 'Скрывать пароль';
+  hidePassword = 'Показывать пароль';
   password = '';
   passType = 'password';
 
@@ -24,10 +24,10 @@ export class CommonFormComponent implements OnInit {
     } else {
       this.passType = 'password';
     }
-    if (this.hidePassword === 'Скрывать пароль') {
-      this.hidePassword = 'Показывать пароль';
-    } else {
+    if (this.hidePassword === 'Показывать пароль') {
       this.hidePassword = 'Скрывать пароль';
+    } else {
+      this.hidePassword = 'Показывать пароль';
     }
   }
 

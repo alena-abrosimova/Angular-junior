@@ -40,12 +40,13 @@ import {MatAutocompleteModule,
   MatTooltipModule,
   MatStepperModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { NgxHideDirective } from './directives/ngx-hide.directive';
+import { NgxHideDirective } from './shared/directives/ngx-hide.directive';
 import {CommonModule} from '@angular/common';
 
 import { CommonFormComponent } from './common-form/common-form.component';
 import {CommonFormModule} from './common-form/commonForm.module';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import {BackendModule} from './backendCommon/backend.module';
 
 
 @NgModule({
@@ -90,11 +91,11 @@ import { RegisterFormComponent } from './register-form/register-form.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     UIRouterModule,
     HttpModule,
-    HttpClientModule,
     MatNativeDateModule,
     ReactiveFormsModule,
     FormsModule,
@@ -130,7 +131,8 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     MatTooltipModule,
     MatStepperModule,
     CommonModule,
-    CommonFormModule
+    CommonFormModule,
+    BackendModule
 
 ],
   providers: [],
