@@ -39,8 +39,8 @@ export class CommonFormComponent implements OnInit {
   submitForm(formLogin: NgForm) {
     this.userService.getCurrentUserData(formLogin.value.email).subscribe((user: User) => {
       if (user) {
-        if (user.password === this.password) {
-          this.textMassage = 'Логин: ' + user.email + ' . Пароль: ' + user.password + '. Имя: ' + user.name;
+        if (user.pass === this.password) {
+          this.textMassage = 'Логин: ' + user.email + ' . Пароль: ' + user.pass + '. Имя: ' + user.username;
           this.msgClass = 'hint';
         } else {
           this.textMassage = 'Пароль не верный';

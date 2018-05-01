@@ -5,24 +5,23 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 
 export class BackendService {
-  private baseUrl = 'http://localhost:3000/';
 
   constructor(private http: HttpClient) {}
 
-  private getUrl(url: string = ''): string {
-    return this.baseUrl + url;
-  }
+ // private getUrl(url: string = ''): string {
+ //   return this.baseUrl + url;
+ // }
 
   public get(url: string = ''): Observable<any> {
-    return this.http.get(this.getUrl(url));
+    return this.http.get(url);
   }
 
   public post(url: string = '', data: any = {}): Observable<any> {
-    return this.http.post(this.getUrl(url), data);
+    return this.http.post(url, data);
   }
 
   public put(url: string = '', data: any = {}): Observable<any> {
-    return this.http.put(this.getUrl(url), data);
+    return this.http.put(url, data);
   }
 
 }

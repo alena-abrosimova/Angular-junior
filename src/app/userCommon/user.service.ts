@@ -14,12 +14,14 @@ export class UserService extends BackendService {
   }
 
   getCurrentUserData (email: string): Observable<User> {
-    return this.get<User[]>(`users?email=${email}`)
-      .map((user: User[]) => user[0] ? user[0] : undefined);
+    return this.httpClient.get<User[]>(`http://localhost:3000/users?email=${email}`)
+      .map((user: User[]) => {
+        return user[0] ? user[0] : undefined;
+      });
   }
 
   register(user: User): Observable<User> {
-    return this.post('users', user);
+    return this.httpClient.post<User>('http://localhost:3000/users', user);
   }
 
 }

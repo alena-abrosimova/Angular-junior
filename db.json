@@ -3,8 +3,20 @@
     {
       "id": 1,
       "email": "test@mail.ru",
-      "password": "12345678",
-      "name": "Администратор"
+      "pass": "12345678",
+      "username": "Администратор"
+    },
+    {
+      "email": "mail@mail.ru",
+      "pass": "123456",
+      "username": "Ally",
+      "id": 2
+    },
+    {
+      "email": "test1@gmail.com",
+      "pass": "123456789",
+      "username": "Roman",
+      "id": 3
     }
   ]
 }
