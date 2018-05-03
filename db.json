@@ -17,6 +17,12 @@
       "pass": "123456789",
       "username": "Roman",
       "id": 3
+    },
+    {
+      "email": "aljona_a@bk.ru",
+      "pass": "123456",
+      "username": "Alena",
+      "id": 4
     }
   ]
 }

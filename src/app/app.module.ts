@@ -39,11 +39,11 @@ import {MatAutocompleteModule,
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 
-import { CommonFormComponent } from './common-form/common-form.component';
-import {CommonFormModule} from './common-form/commonForm.module';
-import { RegisterFormComponent } from './register-form/register-form.component';
+import { CommonFormComponent } from './userCommon/common-form/common-form.component';
+import {CommonFormModule} from './userCommon/common-form/commonForm.module';
+import { RegisterFormComponent } from './userCommon/register-form/register-form.component';
 import {BackendModule} from './backendCommon/backend.module';
-import {UserService} from './userCommon/user.service';
+import {UserService} from './shared/services/user.service';
 import { NgxHideDirective } from './shared/directives/ngx-hide.directive';
 import { AppComponent } from './app.component';
 
