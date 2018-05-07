@@ -1,3 +1,4 @@
+
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {
@@ -40,7 +41,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {CommonFormComponent} from './common-form.component';
+import {SystemCommonComponent} from '../systemCommon/systemCommon.component';
+import {JobFormComponent} from '../systemCommon/job-form/job-form.component';
+import {ContractFormComponent} from '../systemCommon/contract-form/contract-form.component';
 
 @NgModule({
   exports: [
@@ -77,6 +80,9 @@ import {CommonFormComponent} from './common-form.component';
     MatStepperModule
   ],
   declarations: [
+    SystemCommonComponent,
+    JobFormComponent,
+    ContractFormComponent
   ],
   imports: [
     BrowserModule,
@@ -120,9 +126,7 @@ import {CommonFormComponent} from './common-form.component';
     MatTooltipModule,
     MatStepperModule,
     CommonModule
-  ],
-  providers: [],
-  bootstrap: [CommonFormComponent]
+  ]
 })
 
-export class CommonFormModule {}
+export class SystemCommonModule {}

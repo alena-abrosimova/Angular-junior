@@ -1,0 +1,22 @@
+.user-card {
+  width: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform:translateY(-50%) translateX(-50%);
+}
+.user-image{
+  background-image: url('https://avt-22.foto.mail.ru/mail/anastasiyarafolovich/_avatar180?');
+  background-size: cover;
+}
+.user-content {
+  text-align: center;
+}
+.user-title {
+  font-size: 26px;
+  color: darkmagenta;
+}
+.user-tab {
+  border: 1px solid #e8e8e8;
+}

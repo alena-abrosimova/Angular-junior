@@ -1,0 +1,16 @@
+<mat-card class="user-card">
+  <mat-card-header class="user-header">
+    <div mat-card-avatar class="user-image"></div>
+    <mat-card-title class="user-title">Angular-Junior</mat-card-title>
+    <mat-card-subtitle>Лабораторная работа</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="user-content">
+   <nav mat-tab-nav-bar>
+     <a mat-tab-link [routerLink]="'/login'">Sign Up</a>
+     <a mat-tab-link [routerLink]="'/registration'">Registration</a>
+   </nav>
+    <router-outlet></router-outlet>
+  </mat-card-content>
+</mat-card>
+
+

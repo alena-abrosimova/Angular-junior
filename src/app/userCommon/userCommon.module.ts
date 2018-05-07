@@ -1,10 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {UIRouterModule} from '@uirouter/angular';
-import {HttpClientModule} from '@angular/common/http';
-import {MatAutocompleteModule,
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {
+  MatAutocompleteModule,
   MatButtonModule,
   MatButtonToggleModule,
   MatCardModule,
@@ -24,29 +21,28 @@ import {MatAutocompleteModule,
   MatProgressSpinnerModule,
   MatRadioModule,
   MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
+  MatSelectModule, MatSidenavModule,
   MatSliderModule,
   MatSlideToggleModule,
   MatSnackBarModule,
   MatSortModule,
+  MatStepperModule,
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
-  MatTooltipModule,
-  MatStepperModule} from '@angular/material';
+  MatTooltipModule
+} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
+import {UIRouterModule} from '@uirouter/angular';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserModule} from '@angular/platform-browser';
 
-
-import {BackendModule} from './backendCommon/backend.module';
-import {UserService} from './shared/services/user.service';
-import { NgxHideDirective } from './shared/directives/ngx-hide.directive';
-import { AppComponent } from './app.component';
-import {UserCommonModule} from './userCommon/userCommon.module';
-import {SystemCommonModule} from './systemCommon/systemCommon.module';
-import {AppRoutingModule} from './app-routing.module';
-
+import {RegisterFormComponent} from './register-form/register-form.component';
+import {UserCommonComponent} from './userCommon.component';
+import {CommonFormComponent} from './common-form/common-form.component';
+import {UserCommonRoutingModule} from './userCommon-routing.module';
 
 @NgModule({
   exports: [
@@ -83,15 +79,16 @@ import {AppRoutingModule} from './app-routing.module';
     MatStepperModule
   ],
   declarations: [
-    AppComponent,
-    NgxHideDirective
+    UserCommonComponent,
+    CommonFormComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     UIRouterModule,
+    HttpClientModule,
     MatNativeDateModule,
     ReactiveFormsModule,
     FormsModule,
@@ -127,12 +124,8 @@ import {AppRoutingModule} from './app-routing.module';
     MatTooltipModule,
     MatStepperModule,
     CommonModule,
-    BackendModule,
-    UserCommonModule,
-    SystemCommonModule,
-    AppRoutingModule
-],
-  providers: [UserService],
-  bootstrap: [AppComponent]
+    UserCommonRoutingModule
+  ]
 })
-export class AppModule { }
+
+export class UserCommonModule {}
