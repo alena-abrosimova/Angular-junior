@@ -1,0 +1,11 @@
+.user-menu {
+  position: absolute;
+  right: 15px;
+}
+.system-bar, .system-button, .user-menu {
+  background-color: darkmagenta;
+}
+.system-button, .user-menu {
+  color: white;
+  font-size: 20px;
+}

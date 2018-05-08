@@ -13,16 +13,22 @@
       "id": 2
     },
     {
-      "email": "test1@gmail.com",
-      "pass": "123456789",
-      "username": "Roman",
+      "email": "test1@mail.ru",
+      "pass": "password",
+      "username": "User",
       "id": 3
     },
     {
-      "email": "aljona_a@bk.ru",
-      "pass": "123456",
-      "username": "Alena",
+      "email": "user@mail.ru",
+      "pass": "pass12",
+      "username": "User2",
       "id": 4
+    },
+    {
+      "email": "user@user.com",
+      "pass": "userpass",
+      "username": "UserUser",
+      "id": 5
     }
   ]
 }

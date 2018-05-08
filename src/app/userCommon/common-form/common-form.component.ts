@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 
 import {UserService} from '../../shared/services/user.service';
 import {User} from '../../shared/models/user.model';
@@ -15,12 +16,19 @@ export class CommonFormComponent implements OnInit {
   password = '';
   passType = 'password';
   textMassage = '';
-  msgClass = 'error';
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,
+              private router: Router,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.route.queryParams
+      .subscribe((params: Params) => {
+        if (params['deniedAccess']) {
+          this.textMassage = 'Для доступа в систему необходимо войти';
+        }
+      });
   }
 
   onClick() {
@@ -40,17 +48,14 @@ export class CommonFormComponent implements OnInit {
     this.userService.getCurrentUserData(formLogin.value.email).subscribe((user: User) => {
       if (user) {
         if (user.pass === this.password) {
-          this.textMassage = 'Логин: ' + user.email + ' . Пароль: ' + user.pass + '. Имя: ' + user.username;
           window.localStorage.setItem('user', JSON.stringify(user));
           this.userService.login();
-          this.msgClass = 'hint';
+          this.router.navigate(['/system', 'jobs']);
         } else {
           this.textMassage = 'Пароль не верный';
-          this.msgClass = 'error';
         }
       } else {
         this.textMassage = 'Пользователя не существует';
-        this.msgClass = 'error';
       }
     });
   }

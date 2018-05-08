@@ -46,6 +46,7 @@ import { AppComponent } from './app.component';
 import {UserCommonModule} from './userCommon/userCommon.module';
 import {SystemCommonModule} from './systemCommon/systemCommon.module';
 import {AppRoutingModule} from './app-routing.module';
+import {AuthenticationGuard} from './shared/services/authentication.guard';
 
 
 @NgModule({
@@ -132,7 +133,7 @@ import {AppRoutingModule} from './app-routing.module';
     SystemCommonModule,
     AppRoutingModule
 ],
-  providers: [UserService],
+  providers: [UserService, AuthenticationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

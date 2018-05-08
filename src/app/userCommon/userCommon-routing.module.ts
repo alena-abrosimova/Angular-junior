@@ -6,7 +6,7 @@ import {RegisterFormComponent} from './register-form/register-form.component';
 import {UserCommonComponent} from './userCommon.component';
 
 const routes: Routes = [
-  {path: '', component: UserCommonComponent, children: [
+  {path: 'home', component: UserCommonComponent, children: [
     {path: 'login', component: CommonFormComponent},
     {path: 'registration', component: RegisterFormComponent}
   ]},

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators} from '@angular/forms';
 
 import {UserService} from '../../shared/services/user.service';
 import {User} from '../../shared/models/user.model';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class RegisterFormComponent implements OnInit {
   textMsg = '';
 
   formRegister: FormGroup;
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -47,8 +49,10 @@ export class RegisterFormComponent implements OnInit {
     console.log('Submited!', this.formRegister);
     const {email, pass, username} = this.formRegister.value;
     const user = new User(email, pass, username);
-    this.userService.register(user).subscribe();
-    this.textMsg = 'Пользователь зарегестрирован. Можете войти в систему.';
+    this.userService.register(user).subscribe(() => {
+      this.textMsg = 'Пользователь зарегестрирован. Можете войти в систему.';
+    });
+    setTimeout(() => this.router.navigate(['/home', 'login']), 5000);
   }
 
    checkForRePass(): Promise<any> {

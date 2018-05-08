@@ -1,1 +1,13 @@
+<div>
+  <nav mat-tab-nav-bar class="system-bar">
+    <a mat-tab-link [routerLink]="['/system', 'jobs']" class="system-button"> All jobs </a>
+    <a mat-tab-link [routerLink]="['/system', 'contracts']" class="system-button"> Your contracts </a>
+    <a mat-tab-link [matMenuTriggerFor]="menu" class="user-menu"> Здравствуйте, {{user.username}}</a>
+    <mat-menu #menu [overlapTrigger]="false">
+      <button mat-menu-item="" class="system-button" (click)="onLogout()">Выход</button>
+    </mat-menu>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>
 

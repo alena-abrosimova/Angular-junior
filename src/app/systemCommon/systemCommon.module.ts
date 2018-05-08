@@ -41,9 +41,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {SystemCommonComponent} from '../systemCommon/systemCommon.component';
-import {JobFormComponent} from '../systemCommon/job-form/job-form.component';
-import {ContractFormComponent} from '../systemCommon/contract-form/contract-form.component';
+import {SystemCommonComponent} from './systemCommon.component';
+import {JobFormComponent} from './job-form/job-form.component';
+import {ContractFormComponent} from './contract-form/contract-form.component';
+import {SystemCommonRoutingModule} from './systemCommon-routing.module';
 
 @NgModule({
   exports: [
@@ -125,7 +126,8 @@ import {ContractFormComponent} from '../systemCommon/contract-form/contract-form
     MatToolbarModule,
     MatTooltipModule,
     MatStepperModule,
-    CommonModule
+    CommonModule,
+    SystemCommonRoutingModule
   ]
 })
 
