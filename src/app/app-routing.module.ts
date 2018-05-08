@@ -4,7 +4,8 @@ import {RouterModule, Routes} from '@angular/router';
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', loadChildren: './userCommon/userCommon.module#UserCommonModule'},
-  {path: 'system', loadChildren: './systemCommon/systemCommon.module#SystemCommonModule'}
+  {path: 'system', loadChildren: './systemCommon/systemCommon.module#SystemCommonModule'},
+  {path: '**', redirectTo: 'system'}
 ];
 
 @NgModule({
