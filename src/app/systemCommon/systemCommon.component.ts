@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 import {User} from '../shared/models/user.model';
 import {UserService} from '../shared/services/user.service';
 
+
+
 @Component({
   selector: 'app-system-common',
   templateUrl: './systemCommon.component.html',
@@ -14,7 +16,8 @@ export class SystemCommonComponent implements OnInit {
   user: User;
 
   constructor(private userService: UserService,
-              private router: Router) { }
+              private router: Router,
+  ) { }
 
   ngOnInit() {
     this.user = JSON.parse(window.localStorage.getItem('user'));
@@ -24,4 +27,5 @@ export class SystemCommonComponent implements OnInit {
     this.userService.logout();
     this.router.navigate(['/home', 'login']);
   }
+
 }

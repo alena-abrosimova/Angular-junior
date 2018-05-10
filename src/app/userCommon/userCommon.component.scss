@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Playball');
 .user-card {
   width: 350px;
   position: absolute;
@@ -5,18 +6,30 @@
   left: 50%;
   -webkit-transform: translateY(-50%) translateX(-50%);
   transform:translateY(-50%) translateX(-50%);
+  padding: 0;
+  border: 1px solid seagreen;
 }
 .user-image{
-  background-image: url('https://avt-22.foto.mail.ru/mail/anastasiyarafolovich/_avatar180?');
+  background-image: url('../../disign/icon.png');
   background-size: cover;
 }
 .user-content {
   text-align: center;
 }
 .user-title {
-  font-size: 26px;
-  color: darkmagenta;
+  padding-left: 10%;
+  font-size: 30px;
+  color: white;
+  font-family: 'Playball', cursive;
 }
-.user-tab {
-  border: 1px solid #e8e8e8;
+.user-header {
+  padding-left: 5%;
+  padding-top: 5%;
+  background-color: seagreen;
+}
+.user-bar {
+  background-color: lightgreen;
+}
+.user-subtitle {
+  padding-left: 15%;
 }

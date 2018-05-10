@@ -8,11 +8,9 @@ import {Router} from '@angular/router';
   styleUrls: ['./userCommon.component.scss']
 })
 export class UserCommonComponent implements OnInit {
-
   constructor(private router: Router) { }
 
   ngOnInit() {
     this.router.navigate(['/home', 'login']);
   }
-
 }

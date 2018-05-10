@@ -1,9 +1,6 @@
-// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,800,700,600);
 
 body {
-  font-family: Roboto, Arial, sans-serif;
   margin: 0;
 }
 
@@ -16,6 +13,12 @@ body {
   float: right;
 }
 body,html {
-  font-family:'Open Sans',sans-serif;
+  background-color: #F5FFFA;
 }
+.mat-menu-content {
+  background-color: seagreen;
+  display: flex;
+  flex-direction: column;
+}
+
 

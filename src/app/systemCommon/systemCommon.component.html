@@ -1,13 +1,46 @@
-<div>
-  <nav mat-tab-nav-bar class="system-bar">
+<nav mat-tab-nav-bar class="system-bar">
+    <button mat-button aria-label="Menu" class="snack-button" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
     <a mat-tab-link [routerLink]="['/system', 'jobs']" class="system-button"> All jobs </a>
     <a mat-tab-link [routerLink]="['/system', 'contracts']" class="system-button"> Your contracts </a>
-    <a mat-tab-link [matMenuTriggerFor]="menu" class="user-menu"> Здравствуйте, {{user.username}}</a>
-    <mat-menu #menu [overlapTrigger]="false">
-      <button mat-menu-item="" class="system-button" (click)="onLogout()">Выход</button>
-    </mat-menu>
-  </nav>
-
-  <router-outlet></router-outlet>
-</div>
+    <a mat-tab-link [matMenuTriggerFor]="menu" class="system-tab-menu"> Здравствуйте, {{user.username}}</a>
+      <mat-menu #menu [overlapTrigger]="false">
+          <button mat-menu-item class="system-button">Профиль</button>
+          <button mat-menu-item class="system-button" (click)="onLogout()">Выход</button>
+      </mat-menu>
+</nav>
+  <mat-drawer-container class="system-container">
+     <mat-drawer #drawer mode="side" class="system-drawer">
+       <h3>Filter </h3>
+       <mat-accordion>
+        <mat-expansion-panel class="system-expanel">
+          <mat-expansion-panel-header>
+            Сложность
+          </mat-expansion-panel-header>
+           <mat-form-field>
+             <mat-select placeholder="Выберите сложность">
+               <mat-option>Лёгко</mat-option>
+               <mat-option>Средне</mat-option>
+               <mat-option>Трудно</mat-option>
+             </mat-select>
+           </mat-form-field>
+        </mat-expansion-panel>
+         <mat-expansion-panel class="system-expanel">
+          <mat-expansion-panel-header>
+            Награда
+          </mat-expansion-panel-header>
+            <mat-form-field>
+              <input matInput type="number" placeholder="От, руб." maxlength="6">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="number" placeholder="До, руб." maxlength="6">
+            </mat-form-field>
+         </mat-expansion-panel>
+       </mat-accordion>
+     </mat-drawer>
+    <mat-drawer-content class="system-content">
+     <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
 

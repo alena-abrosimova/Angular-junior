@@ -46,7 +46,7 @@ export class RegisterFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Submited!', this.formRegister);
+    console.log('Submited!', this.formRegister.value);
     const {email, pass, username} = this.formRegister.value;
     const user = new User(email, pass, username);
     this.userService.register(user).subscribe(() => {

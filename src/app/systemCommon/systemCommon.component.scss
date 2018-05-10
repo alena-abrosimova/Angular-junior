@@ -1,11 +1,36 @@
-.user-menu {
+.system-tab-menu {
   position: absolute;
   right: 15px;
 }
-.system-bar, .system-button, .user-menu {
-  background-color: darkmagenta;
+.system-bar, .system-button, .system-tab-menu, .system-drawer {
+  background-color: seagreen;
 }
-.system-button, .user-menu {
+.system-button, .system-tab-menu, .system-drawer {
   color: white;
   font-size: 20px;
+}
+.system-button {
+  text-align: center;
+}
+.system-content {
+  background-color: mintcream;
+  padding: 30px;
+  margin: auto;
+
+}
+.snack-button {
+  position: static;
+}
+
+.system-drawer {
+  width: 260px;
+  padding: 20px;
+  position: fixed;
+  top: 49px;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 8px seagreen;
+}
+.system-expanel {
+  background-color: #F5FFFA;
 }

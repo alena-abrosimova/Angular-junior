@@ -1,16 +1,19 @@
-<mat-card class="user-card">
-  <mat-card-header class="user-header">
-    <div mat-card-avatar class="user-image"></div>
-    <mat-card-title class="user-title">Angular-Junior</mat-card-title>
-    <mat-card-subtitle>Лабораторная работа</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content class="user-content">
-   <nav mat-tab-nav-bar>
-     <a mat-tab-link [routerLink]="['/home', 'login']">Sign Up</a>
-     <a mat-tab-link [routerLink]="['/home', 'registration']">Registration</a>
-   </nav>
-    <router-outlet></router-outlet>
-  </mat-card-content>
-</mat-card>
+<div>
+  <mat-card class="user-card" style="border-radius: 10px; box-shadow: 0 0 10px seagreen;">
+    <mat-card-header class="user-header" style="border-radius: 10px 10px 0 0;">
+      <div mat-card-avatar class="user-image"></div>
+      <mat-card-title class="user-title">Angular-Junior</mat-card-title>
+      <mat-card-subtitle class="user-subtitle">Лабораторная работа</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="user-content">
+      <nav mat-tab-nav-bar class="user-bar">
+        <a mat-tab-link [routerLink]="['/home', 'login']">Sign Up</a>
+        <a mat-tab-link [routerLink]="['/home', 'registration']">
+          Registration</a>
+      </nav>
+      <router-outlet></router-outlet>
+    </mat-card-content>
+  </mat-card>
+</div>
 
 
