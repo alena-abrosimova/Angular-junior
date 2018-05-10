@@ -14,6 +14,7 @@ import {UserService} from '../shared/services/user.service';
 export class SystemCommonComponent implements OnInit {
 
   user: User;
+  state = true;
 
   constructor(private userService: UserService,
               private router: Router,
@@ -27,5 +28,10 @@ export class SystemCommonComponent implements OnInit {
     this.userService.logout();
     this.router.navigate(['/home', 'login']);
   }
-
+  jobState() {
+    this.state = true;
+  }
+  contractState() {
+    this.state = false;
+  }
 }

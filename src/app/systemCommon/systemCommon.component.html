@@ -2,9 +2,12 @@
     <button mat-button aria-label="Menu" class="snack-button" (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <a mat-tab-link [routerLink]="['/system', 'jobs']" class="system-button"> All jobs </a>
-    <a mat-tab-link [routerLink]="['/system', 'contracts']" class="system-button"> Your contracts </a>
-    <a mat-tab-link [matMenuTriggerFor]="menu" class="system-tab-menu"> Здравствуйте, {{user.username}}</a>
+    <a mat-tab-link [routerLink]="['/system', 'jobs']" class="system-button" (click)="jobState()"> All jobs </a>
+    <a mat-tab-link [routerLink]="['/system', 'contracts']" class="system-button" (click)="contractState()"> Your
+      contracts </a>
+    <a mat-tab-link [matMenuTriggerFor]="menu" class="system-tab-menu">
+      <mat-icon>face</mat-icon>
+    </a>
       <mat-menu #menu [overlapTrigger]="false">
           <button mat-menu-item class="system-button">Профиль</button>
           <button mat-menu-item class="system-button" (click)="onLogout()">Выход</button>
@@ -12,19 +15,18 @@
 </nav>
   <mat-drawer-container class="system-container">
      <mat-drawer #drawer mode="side" class="system-drawer">
-       <h3>Filter </h3>
-       <mat-accordion>
+       <h3  *ngIf="state">Filter </h3>
+       <mat-accordion  *ngIf="state">
         <mat-expansion-panel class="system-expanel">
           <mat-expansion-panel-header>
             Сложность
           </mat-expansion-panel-header>
-           <mat-form-field>
-             <mat-select placeholder="Выберите сложность">
-               <mat-option>Лёгко</mat-option>
-               <mat-option>Средне</mat-option>
-               <mat-option>Трудно</mat-option>
-             </mat-select>
-           </mat-form-field>
+          <mat-label>Выберите сложность:</mat-label>
+          <div class="checkbox-container">
+            <mat-checkbox>Легко</mat-checkbox>
+            <mat-checkbox>Средне</mat-checkbox>
+            <mat-checkbox>Трудно</mat-checkbox>
+          </div>
         </mat-expansion-panel>
          <mat-expansion-panel class="system-expanel">
           <mat-expansion-panel-header>
@@ -38,6 +40,9 @@
             </mat-form-field>
          </mat-expansion-panel>
        </mat-accordion>
+       <button mat-button [routerLink]="['/system', 'jobs']" *ngIf="!state" class="system-button-contract"
+               (click)="jobState()">All
+         jobs</button>
      </mat-drawer>
     <mat-drawer-content class="system-content">
      <router-outlet></router-outlet>

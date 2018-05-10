@@ -1,3 +1,11 @@
-<p>
-  job-form works!
-</p>
+<mat-grid-list cols="4">
+  <mat-grid-tile *ngFor="let job of jobList">
+    <mat-card class="job-card">
+      <mat-card-header>
+        <mat-card-title>{{job.title}}</mat-card-title>
+        <mat-card-subtitle> {{job.level}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt dolore ipsam minima! Debitis, eaque incidunt ipsa ipsam officiis vel.</mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
