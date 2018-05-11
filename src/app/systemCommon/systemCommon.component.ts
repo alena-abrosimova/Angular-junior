@@ -12,7 +12,9 @@ import {UserService} from '../shared/services/user.service';
   styleUrls: ['./systemCommon.component.scss']
 })
 export class SystemCommonComponent implements OnInit {
-
+  easyLevel = false;
+  middleLevel = false;
+  highLevel = false;
   user: User;
   state = true;
   sideNavState = false;
@@ -34,6 +36,11 @@ export class SystemCommonComponent implements OnInit {
   jobState() {
     // ослеживание открытого компонента для изменения содержимого sidenav
     this.state = true;
+    if (this.sideNavState === true) {
+      this.router.navigate(['/system', 'jobs'], {queryParams: {isSideNavOpened: true, checkAll: true}});
+    } else if (this.sideNavState === false) {
+      this.router.navigate(['/system', 'jobs'], {queryParams: {checkAll: true}});
+    }
   }
   contractState() {
     // ослеживание открытого компонента для изменения содержимого sidenav
@@ -54,6 +61,5 @@ export class SystemCommonComponent implements OnInit {
         this.router.navigate(['/system', 'jobs'], {queryParams: {isSideNavClosed: true}});
       }
     }
-
   }
 }

@@ -16,5 +16,8 @@ export class JobsService extends BackendService {
   getAllJobs(): Observable<Job[]> {
     return this.httpClient.get<Job[]>('http://localhost:3000/jobs');
   }
+  getJobsByLevel(level: string): Observable<Job[]> {
+    return this.httpClient.get<Job[]>(`http://localhost:3000/jobs?level=${level}`);
 
+  }
 }

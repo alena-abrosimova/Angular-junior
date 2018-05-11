@@ -34,6 +34,38 @@ export class JobFormComponent implements OnInit, OnDestroy {
     this.sub1 = this.jobService.getAllJobs().subscribe((jobs: Job[]) => {
       this.jobs = jobs;
     });
+    this.route.queryParams
+      .subscribe((params: Params) => {
+        if (params['checkEasyLevel']) {
+          this.sub1 = this.jobService.getJobsByLevel('easy')
+            .subscribe((jobs: Job[]) => {
+            if (jobs) {
+              this.jobs = jobs;
+            }
+          });
+        }
+        if (params['checkMidLevel']) {
+          this.sub1 = this.jobService.getJobsByLevel('middle')
+            .subscribe((jobs: Job[]) => {
+              if (jobs) {
+                this.jobs = jobs;
+              }
+            });
+        }
+        if (params['checkHighLevel']) {
+          this.sub1 = this.jobService.getJobsByLevel('high')
+            .subscribe((jobs: Job[]) => {
+              if (jobs) {
+                this.jobs = jobs;
+              }
+            });
+        }
+        if (params['checkAll']) {
+          this.sub1 = this.jobService.getAllJobs().subscribe((jobs: Job[]) => {
+            this.jobs = jobs;
+          });
+        }
+      });
   }
   ngOnDestroy() {
     if (this.sub1) {
