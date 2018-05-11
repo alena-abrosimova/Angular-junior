@@ -21,21 +21,27 @@ export class SystemCommonComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // Получение данных о вошедшем пользователе
     this.user = JSON.parse(window.localStorage.getItem('user'));
+    // Перенаправление на компонент по умолчанию
     this.router.navigate(['/system', 'jobs']);
   }
   onLogout() {
+    // выход из системы и перенаправление на компонент логина
     this.userService.logout();
     this.router.navigate(['/home', 'login']);
   }
   jobState() {
+    // ослеживание открытого компонента для изменения содержимого sidenav
     this.state = true;
   }
   contractState() {
+    // ослеживание открытого компонента для изменения содержимого sidenav
     this.state = false;
   }
   onSideNavState() {
     if (this.state === true) {
+      // передача параметров в подгружаемый компонент в зависимости от состояния sidenav
       if (this.sideNavState === true) {
         this.sideNavState = false;
       } else {

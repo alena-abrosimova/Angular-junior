@@ -21,6 +21,7 @@ export class JobFormComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
+    // Динамическое изменение количества колонок в gridlist
     this.route.queryParams
       .subscribe((params: Params) => {
         if (params['isSideNavOpened']) {
@@ -29,6 +30,7 @@ export class JobFormComponent implements OnInit, OnDestroy {
           this.cols = 4;
         }
       });
+    // Выгрузка всех предложений о работе
     this.sub1 = this.jobService.getAllJobs().subscribe((jobs: Job[]) => {
       this.jobs = jobs;
     });

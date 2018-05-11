@@ -23,6 +23,7 @@ export class CommonFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    // реакция на попытку войти в систему без входа
     this.route.queryParams
       .subscribe((params: Params) => {
         if (params['deniedAccess']) {
@@ -45,6 +46,7 @@ export class CommonFormComponent implements OnInit {
   }
 
   submitForm(formLogin: NgForm) {
+    // проверка входящего пользователя и правильности введенных данных
     this.userService.getCurrentUserData(formLogin.value.email).subscribe((user: User) => {
       if (user) {
         if (user.pass === this.password) {

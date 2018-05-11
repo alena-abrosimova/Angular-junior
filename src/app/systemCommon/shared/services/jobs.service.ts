@@ -12,7 +12,7 @@ export class JobsService extends BackendService {
   constructor(private httpClient: HttpClient) {
     super(httpClient);
   }
-
+  // Получение массива всех работ
   getAllJobs(): Observable<Job[]> {
     return this.httpClient.get<Job[]>('http://localhost:3000/jobs');
   }

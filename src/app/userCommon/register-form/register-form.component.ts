@@ -24,6 +24,7 @@ export class RegisterFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    // реактивное создание формы
     this.formRegister = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email], this.forbiddenEmail.bind(this)),
       username: new FormControl('', Validators.required),
@@ -46,6 +47,7 @@ export class RegisterFormComponent implements OnInit {
   }
 
   onSubmit() {
+    // регистрация нового пользователя и перенаправление на компонент входа
     console.log('Submited!', this.formRegister.value);
     const {email, pass, username} = this.formRegister.value;
     const user = new User(email, pass, username);
@@ -56,6 +58,7 @@ export class RegisterFormComponent implements OnInit {
   }
 
    checkForRePass(): Promise<any> {
+    // асинхронный валидатор на совпадение паролей
      return new Promise((resolve, reject) => {
        if (this.formRegister.get('retypePass').value !== this.password) {
          resolve({
@@ -68,6 +71,7 @@ export class RegisterFormComponent implements OnInit {
   }
 
   forbiddenEmail(control: FormControl): Promise<any> {
+    // валидатор на существующего пользователя
     return new Promise((resolve, reject) => {
       this.userService.getCurrentUserData(control.value)
         .subscribe((user: User) => {
