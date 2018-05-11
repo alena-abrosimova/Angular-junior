@@ -34,6 +34,7 @@ export class JobFormComponent implements OnInit, OnDestroy {
     this.sub1 = this.jobService.getAllJobs().subscribe((jobs: Job[]) => {
       this.jobs = jobs;
     });
+    // Выгрузка предложений о работе с фильтрацией
     this.route.queryParams
       .subscribe((params: Params) => {
         if (params['checkEasyLevel']) {

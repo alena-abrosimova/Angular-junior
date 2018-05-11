@@ -39,7 +39,7 @@ export class SystemCommonComponent implements OnInit {
     if (this.sideNavState === true) {
       this.router.navigate(['/system', 'jobs'], {queryParams: {isSideNavOpened: true, checkAll: true}});
     } else if (this.sideNavState === false) {
-      this.router.navigate(['/system', 'jobs'], {queryParams: {checkAll: true}});
+      this.router.navigate(['/system', 'jobs'], {queryParams: { checkAll: true}});
     }
   }
   contractState() {
