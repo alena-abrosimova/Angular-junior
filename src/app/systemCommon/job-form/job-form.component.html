@@ -1,11 +1,12 @@
-<mat-grid-list cols="4">
-  <mat-grid-tile *ngFor="let job of jobList">
+<mat-grid-list gutterSize="10px" [cols]="cols">
+  <mat-grid-tile *ngFor="let job of jobs">
     <mat-card class="job-card">
       <mat-card-header>
         <mat-card-title>{{job.title}}</mat-card-title>
         <mat-card-subtitle> {{job.level}}</mat-card-subtitle>
+        <mat-card-subtitle> Hourly fee: {{job.fee}}</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt dolore ipsam minima! Debitis, eaque incidunt ipsa ipsam officiis vel.</mat-card-content>
+      <mat-card-content>{{job.clarification}}</mat-card-content>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>

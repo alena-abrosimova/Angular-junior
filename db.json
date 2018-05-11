@@ -24,5 +24,85 @@
       "username": "Test",
       "id": 4
     }
+  ],
+
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Job1",
+      "level": "high",
+      "fee": 600,
+      "clarification": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt dolore ipsam minima! Debitis, eaque incidunt ipsa ipsam officiis vel."
+    },
+    {
+      "id": 2,
+      "title": "Job2",
+      "level": "easy",
+      "fee": 200,
+      "clarification": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt dolore ipsam minima! Debitis, eaque incidunt ipsa ipsam officiis vel."
+    },
+    {
+      "id": 3,
+      "title": "Job3",
+      "level": "middle",
+      "fee": 300,
+      "clarification": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt dolore ipsam minima! Debitis, eaque incidunt ipsa ipsam officiis vel."
+    },
+    {
+      "id": 4,
+      "title": "Job4",
+      "level": "high",
+      "fee": 500,
+      "clarification": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt dolore ipsam minima! Debitis, eaque incidunt ipsa ipsam officiis vel."
+    },
+    {
+      "id": 5,
+      "title": "Job5",
+      "level": "easy",
+      "fee": 100,
+      "clarification": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt dolore ipsam minima! Debitis, eaque incidunt ipsa ipsam officiis vel."
+    },
+    {
+      "id": 6,
+      "title": "Job6",
+      "level": "easy",
+      "fee": 150,
+      "clarification": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt dolore ipsam minima! Debitis, eaque incidunt ipsa ipsam officiis vel."
+    }
+  ],
+
+  "contracts": [
+    {
+      "id": 1,
+      "job": 1,
+      "contractor": 3,
+      "hours": 14,
+      "lastdate": "17.06.2017 14:00:58",
+      "amount": 8400
+    },
+    {
+      "id": 2,
+      "job": 3,
+      "contractor": 1,
+      "hours": 6,
+      "lastdate": "17.06.2017 14:00:58",
+      "amount": 2400
+    },
+    {
+      "id": 3,
+      "job": 5,
+      "contractor": 2,
+      "hours": 15,
+      "lastdate": "17.06.2017 14:00:58",
+      "amount": 1500
+    },
+    {
+      "id": 4,
+      "job": 6,
+      "contractor": 2,
+      "hours": 20,
+      "lastdate": "17.06.2017 14:00:58",
+      "amount": 3000
+    }
   ]
 }

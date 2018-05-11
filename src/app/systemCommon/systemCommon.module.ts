@@ -45,6 +45,7 @@ import {SystemCommonComponent} from './systemCommon.component';
 import {JobFormComponent} from './job-form/job-form.component';
 import {ContractFormComponent} from './contract-form/contract-form.component';
 import {SystemCommonRoutingModule} from './systemCommon-routing.module';
+import {JobsService} from './shared/services/jobs.service';
 
 @NgModule({
   exports: [
@@ -128,7 +129,8 @@ import {SystemCommonRoutingModule} from './systemCommon-routing.module';
     MatStepperModule,
     CommonModule,
     SystemCommonRoutingModule
-  ]
+  ],
+  providers: [JobsService]
 })
 
 export class SystemCommonModule {}

@@ -15,7 +15,7 @@ export class SystemCommonComponent implements OnInit {
 
   user: User;
   state = true;
-
+  sideNavState = false;
   constructor(private userService: UserService,
               private router: Router,
   ) { }
@@ -33,5 +33,21 @@ export class SystemCommonComponent implements OnInit {
   }
   contractState() {
     this.state = false;
+  }
+  onSideNavState() {
+    if (this.state === true) {
+      if (this.sideNavState === true) {
+        this.sideNavState = false;
+      } else {
+        this.sideNavState = true;
+      }
+      if (this.sideNavState === true) {
+        this.router.navigate(['/system', 'jobs'], {queryParams: {isSideNavOpened: true}});
+      }
+      if (this.sideNavState === false) {
+        this.router.navigate(['/system', 'jobs'], {queryParams: {isSideNavClosed: true}});
+      }
+    }
+
   }
 }
