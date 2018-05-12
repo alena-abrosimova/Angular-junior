@@ -5,6 +5,14 @@
 .system-bar, .system-button, .system-tab-menu, .system-drawer {
   background-color: seagreen;
 }
+.system-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
 .system-button, .system-tab-menu, .system-drawer {
   color: white;
   font-size: 20px;
@@ -13,9 +21,9 @@
   text-align: center;
 }
 .system-content {
+  margin-top: 40px;
   background-color: mintcream;
   padding: 30px;
-  margin: auto;
 
 }
 .snack-button {
@@ -23,13 +31,13 @@
 }
 
 .system-drawer {
-  width: 260px;
-  padding: 20px;
   position: fixed;
-  top: 49px;
+  top: 40px;
   bottom: 0;
   left: 0;
-  box-shadow: 0 0 8px seagreen;
+  width: 260px;
+  padding: 20px;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2), 0 0 10px 3px rgba(0, 0, 0, 0.14), 0 0 18px 3px rgba(0, 0, 0, 0.12);
 }
 .system-expanel {
   background-color: #F5FFFA;
@@ -41,4 +49,7 @@
 .sidenav-button {
   width: 180px;
   margin-top: 10px;
+  color: black;
+  background-color: lightgoldenrodyellow;
 }
+

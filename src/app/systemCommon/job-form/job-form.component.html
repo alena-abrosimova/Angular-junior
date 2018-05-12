@@ -1,13 +1,19 @@
-<mat-grid-list gutterSize="10px" [cols]="cols" rowheight="250px">
-  <mat-grid-tile *ngFor="let job of jobs">
-    <mat-card class="job-card">
+<!--mat-grid-list gutterSize="10px" [cols]="cols" rowheight="250px">
+  <mat-grid-tile *ngFor="let job of jobs"-->
+<div class="job-container">
+    <mat-card class="job-card" *ngFor="let job of jobs">
       <mat-card-header>
-        <mat-card-title>{{job.title}}</mat-card-title>
+        <mat-card-title class="job-card-title">{{job.title}}</mat-card-title>
         <mat-card-subtitle> {{job.level}}</mat-card-subtitle>
         <mat-card-subtitle> Hourly fee: {{job.fee}}</mat-card-subtitle>
+        <mat-card-subtitle> Date: {{job.date}}</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content>{{job.clarification}}</mat-card-content>
+      <mat-card-content class="job-card-content">{{job.clarification.substr(0, 140)}}...</mat-card-content>
+      <mat-card-actions >
+        <button mat-raised-button class="job-card-button" (click)="openDialog(job)">Подробнее</button>
+      </mat-card-actions>
     </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+</div>
+  <!--/mat-grid-tile>
+</mat-grid-list-->
 

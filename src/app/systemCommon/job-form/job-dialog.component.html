@@ -1,0 +1,11 @@
+ <h1 mat-dialog-title>{{data.title}}</h1>
+  <h3>Level: {{data.level}}</h3>
+  <h3>Hourly fee: {{data.fee}}</h3>
+  <div mat-dialog-content class="dialog-content">
+    <p>Date: {{data.date}}</p>
+    <p>{{data.comment}}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Закрыть</button>
+  </div>
+

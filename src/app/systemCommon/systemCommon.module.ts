@@ -42,7 +42,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {SystemCommonComponent} from './systemCommon.component';
-import {JobFormComponent} from './job-form/job-form.component';
+import {JobDialogComponent, JobFormComponent} from './job-form/job-form.component';
 import {ContractFormComponent} from './contract-form/contract-form.component';
 import {SystemCommonRoutingModule} from './systemCommon-routing.module';
 import {JobsService} from './shared/services/jobs.service';
@@ -84,8 +84,10 @@ import {JobsService} from './shared/services/jobs.service';
   declarations: [
     SystemCommonComponent,
     JobFormComponent,
-    ContractFormComponent
+    ContractFormComponent,
+    JobDialogComponent
   ],
+  entryComponents: [JobDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

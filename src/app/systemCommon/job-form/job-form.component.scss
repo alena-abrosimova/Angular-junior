@@ -1,12 +1,41 @@
 .mat-grid-tile {
   background-color: mintcream;
-  width: 250px;
-  align-items: baseline;
+  align-items: center;
+}
+.job-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 30px 0 0 20px;
 }
 .job-card {
   background-color: lightgoldenrodyellow;
-  margin: 5px;
-  box-shadow: 0 0 10px seagreen;
-  width: 240px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(10,16,20,.24), 0 0 2px rgba(10,16,20,.12);
+  box-sizing: border-box;
+  transition: box-shadow .5s;
+  width: 260px;
+  height: 300px;
+  margin: auto 20px 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.job-card-title {
+  font-size: 20px;
+  color: rgb(13, 66, 16);
+}
+.job-card-button {
+  left: 120px;
+  background-color: rgb(240, 200, 108);
+}
+.job-card-content {
+  height: 90px;
+  overflow: hidden;
+  text-indent: 1.5em;
+  text-align: justify;
+}
+.dialog-content {
+  text-indent: 1.5em;
+  text-align: justify;
 }
 

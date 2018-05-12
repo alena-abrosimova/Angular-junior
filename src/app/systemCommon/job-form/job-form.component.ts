@@ -1,9 +1,10 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 
 import {Job} from '../shared/models/jobs.model';
 import {JobsService} from '../shared/services/jobs.service';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 
 
 @Component({
@@ -12,24 +13,25 @@ import {JobsService} from '../shared/services/jobs.service';
   styleUrls: ['./job-form.component.scss']
 })
 export class JobFormComponent implements OnInit, OnDestroy {
-  cols = 4;
+  // cols = 4;
   jobs: Job[] = [];
   sub1: Subscription;
 
   constructor(private route: ActivatedRoute,
-              private jobService: JobsService) { }
+              private jobService: JobsService,
+              private dialog: MatDialog) { }
 
 
   ngOnInit() {
     // Динамическое изменение количества колонок в gridlist
-    this.route.queryParams
-      .subscribe((params: Params) => {
-        if (params['isSideNavOpened']) {
-          this.cols = 3;
-        } else if (params['isSideNavClosed']) {
-          this.cols = 4;
-        }
-      });
+    // this.route.queryParams
+    //   .subscribe((params: Params) => {
+    //     if (params['isSideNavOpened']) {
+    //       this.cols = 3;
+    //     } else if (params['isSideNavClosed']) {
+    //       this.cols = 4;
+    //     }
+    //   });
     // Выгрузка всех предложений о работе
     this.sub1 = this.jobService.getAllJobs().subscribe((jobs: Job[]) => {
       this.jobs = jobs;
@@ -68,9 +70,38 @@ export class JobFormComponent implements OnInit, OnDestroy {
         }
       });
   }
+  openDialog(job: Job): void {
+    const dialogRef = this.dialog.open(JobDialogComponent, {
+      width: '350px',
+      data: {
+        title: job.title,
+        level: job.level,
+        fee: job.fee,
+        date: job.date,
+        comment: job.clarification
+      }
+    });
+  }
   ngOnDestroy() {
     if (this.sub1) {
       this.sub1.unsubscribe();
     }
   }
+}
+
+@Component({
+  selector: 'app-job-dialog',
+  templateUrl: 'job-dialog.component.html',
+  styleUrls: ['./job-form.component.scss']
+})
+export class JobDialogComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<JobDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
 }

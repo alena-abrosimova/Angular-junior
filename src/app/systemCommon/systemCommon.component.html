@@ -1,12 +1,11 @@
 <nav mat-tab-nav-bar class="system-bar">
-    <button mat-button aria-label="Menu" class="snack-button" (click)="onSideNavState(); drawer.toggle()">
+    <button mat-button aria-label="Menu" class="snack-button" (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <a mat-tab-link
-       class="system-button" (click)="jobState()"> All jobs </a>
-    <a mat-tab-link
-       [routerLink]="['/system', 'contracts']"
-       class="system-button" (click)="contractState()"> Your contracts </a>
+    <a mat-tab-link class="system-button"
+       [routerLink]="['/system', 'jobs']" [queryParams]="{checkAll: true}"> All jobs </a>
+    <a mat-tab-link class="system-button"
+       [routerLink]="['/system', 'contracts']"> Your contracts </a>
     <a mat-tab-link [matMenuTriggerFor]="menu" class="system-tab-menu">
       <mat-icon>face</mat-icon>
     </a>
@@ -24,38 +23,27 @@
             Сложность
           </mat-expansion-panel-header>
           <mat-label>Выберите сложность:</mat-label>
-            <button mat-button
+            <mat-button-toggle
               [routerLink]="['/system', 'jobs']" [queryParams]="{checkEasyLevel: true}"
               class="sidenav-button"
             >
-              Легко</button>
-            <button mat-button
+              Легко</mat-button-toggle>
+            <mat-button-toggle mat-button-toggle
                     [routerLink]="['/system', 'jobs']" [queryParams]="{checkMidLevel: true}"
                     class="sidenav-button"
             >
-              Средне</button>
-            <button mat-button
+              Средне</mat-button-toggle>
+            <mat-button-toggle
                     [routerLink]="['/system', 'jobs']" [queryParams]="{checkHighLevel: true}"
                     class="sidenav-button"
             >
-              Трудно</button>
-            <button mat-button
+              Трудно</mat-button-toggle>
+            <mat-button-toggle
                     [routerLink]="['/system', 'jobs']" [queryParams]="{checkAll: true}"
                     class="sidenav-button"
             >
-              Любая</button>
+              Любая</mat-button-toggle>
         </mat-expansion-panel>
-         <mat-expansion-panel class="system-expanel">
-          <mat-expansion-panel-header>
-            Награда
-          </mat-expansion-panel-header>
-            <mat-form-field>
-              <input matInput type="number" placeholder="От, руб." maxlength="6">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput type="number" placeholder="До, руб." maxlength="6">
-            </mat-form-field>
-         </mat-expansion-panel>
        </mat-accordion>
        <button mat-button *ngIf="!state" class="system-contract-button">Функционал</button>
      </mat-drawer>

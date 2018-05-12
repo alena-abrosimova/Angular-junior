@@ -12,12 +12,9 @@ import {UserService} from '../shared/services/user.service';
   styleUrls: ['./systemCommon.component.scss']
 })
 export class SystemCommonComponent implements OnInit {
-  easyLevel = false;
-  middleLevel = false;
-  highLevel = false;
   user: User;
   state = true;
-  sideNavState = false;
+  // sideNavState = false;
   constructor(private userService: UserService,
               private router: Router,
   ) { }
@@ -33,33 +30,33 @@ export class SystemCommonComponent implements OnInit {
     this.userService.logout();
     this.router.navigate(['/home', 'login']);
   }
-  jobState() {
+ // jobState() {
     // ослеживание открытого компонента для изменения содержимого sidenav
-    this.state = true;
-    if (this.sideNavState === true) {
-      this.router.navigate(['/system', 'jobs'], {queryParams: {isSideNavOpened: true, checkAll: true}});
-    } else if (this.sideNavState === false) {
-      this.router.navigate(['/system', 'jobs'], {queryParams: { checkAll: true}});
-    }
-  }
-  contractState() {
-    // ослеживание открытого компонента для изменения содержимого sidenav
-    this.state = false;
-  }
-  onSideNavState() {
-    if (this.state === true) {
-      // передача параметров в подгружаемый компонент в зависимости от состояния sidenav
-      if (this.sideNavState === true) {
-        this.sideNavState = false;
-      } else {
-        this.sideNavState = true;
-      }
-      if (this.sideNavState === true) {
-        this.router.navigate(['/system', 'jobs'], {queryParams: {isSideNavOpened: true}});
-      }
-      if (this.sideNavState === false) {
-        this.router.navigate(['/system', 'jobs'], {queryParams: {isSideNavClosed: true}});
-      }
-    }
-  }
+  //  this.state = true;
+  //  if (this.sideNavState === true) {
+  //    this.router.navigate(['/system', 'jobs'], {queryParams: {isSideNavOpened: true, checkAll: true}});
+  //  } else if (this.sideNavState === false) {
+    //  this.router.navigate(['/system', 'jobs'], {queryParams: { checkAll: true}});
+   // }
+ // }
+ // contractState() {
+ //   // ослеживание открытого компонента для изменения содержимого sidenav
+ //   this.state = false;
+ // }
+  // onSideNavState() {
+  //  if (this.state === true) {
+  //    // передача параметров в подгружаемый компонент в зависимости от состояния sidenav
+  //    if (this.sideNavState === true) {
+  //      this.sideNavState = false;
+  //    } else {
+  //      this.sideNavState = true;
+  //    }
+  //    if (this.sideNavState === true) {
+  //      this.router.navigate(['/system', 'jobs'], {queryParams: {isSideNavOpened: true}});
+  //    }
+  //    if (this.sideNavState === false) {
+  //      this.router.navigate(['/system', 'jobs'], {queryParams: {isSideNavClosed: true}});
+  //    }
+  //  }
+  // }
 }
