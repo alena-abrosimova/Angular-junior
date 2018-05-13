@@ -35,6 +35,7 @@ export class JobFormComponent implements OnInit, OnDestroy {
     // Выгрузка всех предложений о работе
     this.sub1 = this.jobService.getAllJobs().subscribe((jobs: Job[]) => {
       this.jobs = jobs;
+      this.jobs.sort((a, b) => (+moment(b.date, 'DD.MM.YY')) - (+moment(a.date, 'DD.MM.YY')));
     });
     // Выгрузка предложений о работе с фильтрацией
     this.route.queryParams
@@ -44,6 +45,7 @@ export class JobFormComponent implements OnInit, OnDestroy {
             .subscribe((jobs: Job[]) => {
             if (jobs) {
               this.jobs = jobs;
+              this.jobs.sort((a, b) => (+moment(b.date, 'DD.MM.YY')) - (+moment(a.date, 'DD.MM.YY')));
             }
           });
         }
@@ -52,6 +54,7 @@ export class JobFormComponent implements OnInit, OnDestroy {
             .subscribe((jobs: Job[]) => {
               if (jobs) {
                 this.jobs = jobs;
+                this.jobs.sort((a, b) => (+moment(b.date, 'DD.MM.YY')) - (+moment(a.date, 'DD.MM.YY')));
               }
             });
         }
@@ -60,16 +63,18 @@ export class JobFormComponent implements OnInit, OnDestroy {
             .subscribe((jobs: Job[]) => {
               if (jobs) {
                 this.jobs = jobs;
+                this.jobs.sort((a, b) => (+moment(b.date, 'DD.MM.YY')) - (+moment(a.date, 'DD.MM.YY')));
               }
             });
         }
         if (params['checkAll']) {
           this.sub1 = this.jobService.getAllJobs().subscribe((jobs: Job[]) => {
             this.jobs = jobs;
+            this.jobs.sort((a, b) => (+moment(b.date, 'DD.MM.YY')) - (+moment(a.date, 'DD.MM.YY')));
           });
         }
       });
-    this.jobs.sort((a, b) => (+moment(b.date, 'DD.MM.YY')) - (+moment(a.date, 'DD.MM.YY')));
+
   }
 
   openDialog(job: Job): void {
