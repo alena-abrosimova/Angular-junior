@@ -1,11 +1,11 @@
 import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
+import * as moment from 'moment';
 
 import {Job} from '../shared/models/jobs.model';
 import {JobsService} from '../shared/services/jobs.service';
-import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
-
 
 @Component({
   selector: 'app-job-form',
@@ -69,7 +69,9 @@ export class JobFormComponent implements OnInit, OnDestroy {
           });
         }
       });
+    this.jobs.sort((a, b) => (+moment(b.date, 'DD.MM.YY')) - (+moment(a.date, 'DD.MM.YY')));
   }
+
   openDialog(job: Job): void {
     const dialogRef = this.dialog.open(JobDialogComponent, {
       width: '350px',
