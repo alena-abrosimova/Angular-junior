@@ -46,6 +46,9 @@ import {JobDialogComponent, JobFormComponent} from './job-form/job-form.componen
 import {ContractFormComponent} from './contract-form/contract-form.component';
 import {SystemCommonRoutingModule} from './systemCommon-routing.module';
 import {JobsService} from './shared/services/jobs.service';
+import {ContractsService} from './shared/services/contracts.service';
+import {MomentPipe} from './shared/pipes/moment.pipe';
+import {CdkTableModule} from '@angular/cdk/table';
 
 @NgModule({
   exports: [
@@ -79,13 +82,15 @@ import {JobsService} from './shared/services/jobs.service';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatStepperModule
+    MatStepperModule,
+    CdkTableModule
   ],
   declarations: [
     SystemCommonComponent,
     JobFormComponent,
     ContractFormComponent,
-    JobDialogComponent
+    JobDialogComponent,
+    MomentPipe
   ],
   entryComponents: [JobDialogComponent],
   imports: [
@@ -129,10 +134,11 @@ import {JobsService} from './shared/services/jobs.service';
     MatToolbarModule,
     MatTooltipModule,
     MatStepperModule,
+    CdkTableModule,
     CommonModule,
     SystemCommonRoutingModule
   ],
-  providers: [JobsService]
+  providers: [JobsService, ContractsService]
 })
 
 export class SystemCommonModule {}

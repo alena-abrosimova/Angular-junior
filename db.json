@@ -11,18 +11,6 @@
       "pass": "123456",
       "username": "Ally",
       "id": 2
-    },
-    {
-      "email": "test@bk.ru",
-      "pass": "123456",
-      "username": "Test",
-      "id": 3
-    },
-    {
-      "email": "test1@bk.ru",
-      "pass": "123456",
-      "username": "Test",
-      "id": 4
     }
   ],
 
@@ -129,34 +117,203 @@
     {
       "id": 1,
       "job": 1,
-      "contractor": 3,
-      "hours": 14,
-      "lastdate": "17.06.2017 14:00:58",
-      "amount": 8400
+      "contractor": 1,
+      "hours": 58,
+      "lastDate": "14.04.18 14:00:58",
+      "amount": 34800
     },
     {
       "id": 2,
-      "job": 3,
-      "contractor": 1,
+      "job": 1,
+      "contractor": 2,
       "hours": 6,
-      "lastdate": "17.06.2017 14:00:58",
-      "amount": 2400
+      "lastDate": "05.05.18 11:02:04",
+      "amount": 3600
     },
     {
       "id": 3,
-      "job": 5,
-      "contractor": 2,
+      "job": 2,
+      "contractor": 1,
       "hours": 15,
-      "lastdate": "17.06.2017 14:00:58",
-      "amount": 1500
+      "lastDate": "05.04.18 17:56:58",
+      "amount": 3000
     },
     {
       "id": 4,
+      "job": 2,
+      "contractor": 2,
+      "hours": 50,
+      "lastDate": "17.04.18 14:30:45",
+      "amount": 10000
+    },
+    {
+      "id": 5,
+      "job": 3,
+      "contractor":1,
+      "hours": 20,
+      "lastDate": "01.05.18 15:07:20",
+      "amount": 6000
+    },
+    {
+      "id": 6,
+      "job": 3,
+      "contractor": 2,
+      "hours": 14,
+      "lastDate": "18.04.18 09:52:14",
+      "amount": 4200
+    },
+    {
+      "id": 7,
+      "job": 4,
+      "contractor": 1,
+      "hours": 35,
+      "lastDate": "08.05.18 17:45:36",
+      "amount": 17500
+    },
+    {
+      "id": 8,
+      "job": 4,
+      "contractor": 2,
+      "hours": 29,
+      "lastDate": "01.05.18 12:45:25",
+      "amount": 14500
+    },
+    {
+      "id": 9,
+      "job": 5,
+      "contractor": 1,
+      "hours": 20,
+      "lastDate": "04.05.18 11:35:08",
+      "amount": 2000
+    },
+    {
+      "id": 10,
+      "job": 5,
+      "contractor": 2,
+      "hours": 62,
+      "lastDate": "25.04.18 01:00:58",
+      "amount": 6200
+    },
+    {
+      "id": 11,
+      "job": 6,
+      "contractor": 1,
+      "hours": 36,
+      "lastDate": "12.05.18 10:00:36",
+      "amount": 5400
+    },
+    {
+      "id": 12,
       "job": 6,
       "contractor": 2,
+      "hours": 5,
+      "lastDate": "29.04.18 12:46:25",
+      "amount": 750
+    },
+    {
+      "id": 13,
+      "job": 7,
+      "contractor": 1,
       "hours": 20,
-      "lastdate": "17.06.2017 14:00:58",
+      "lastDate": "06.05.18 20:15:35",
+      "amount": 6000
+    },
+    {
+      "id": 14,
+      "job": 7,
+      "contractor": 2,
+      "hours": 15,
+      "lastDate": "30.04.18 18:20:14",
+      "amount": 4500
+    },
+    {
+      "id": 15,
+      "job": 8,
+      "contractor": 1,
+      "hours": 25,
+      "lastDate": "25.04.18 16:25:58",
+      "amount": 12500
+    },
+    {
+      "id": 16,
+      "job": 9,
+      "contractor": 2,
+      "hours": 19,
+      "lastDate": "15.04.18 14:20:30",
+      "amount": 1900
+    },
+    {
+      "id": 17,
+      "job": 10,
+      "contractor": 1,
+      "hours": 20,
+      "lastDate": "21.04.18 13:45:25",
+      "amount": 6000
+    },
+    {
+      "id": 18,
+      "job": 11,
+      "contractor": 2,
+      "hours": 15,
+      "lastDate": "14.05.18 12:04:58",
+      "amount": 7500
+    },
+    {
+      "id": 19,
+      "job": 12,
+      "contractor": 1,
+      "hours": 10,
+      "lastDate": "26.04.18 12:19:25",
+      "amount": 1000
+    },
+    {
+      "id": 20,
+      "job": 4,
+      "contractor": 1,
+      "hours": 5,
+      "lastDate": "14.05.18 18:20:25",
+      "amount": 2500
+    },
+    {
+      "id": 21,
+      "job": 9,
+      "contractor": 1,
+      "hours": 100,
+      "lastDate": "17.04.18 11:58:10",
+      "amount": 10000
+    },
+    {
+      "id": 22,
+      "job": 1,
+      "contractor": 1,
+      "hours": 5,
+      "lastDate": "10.05.18 17:02:25",
       "amount": 3000
+    },
+    {
+      "id": 23,
+      "job": 4,
+      "contractor": 1,
+      "hours": 5,
+      "lastDate": "12.05.18 12:58:14",
+      "amount": 2500
+    },
+    {
+      "id": 24,
+      "job": 3,
+      "contractor": 1,
+      "hours": 7,
+      "lastDate": "13.05.18 17:02:25",
+      "amount": 2100
+    },
+    {
+      "id": 25,
+      "job": 7,
+      "contractor": 1,
+      "hours": 20,
+      "lastDate": "14.05.18 17:02:45",
+      "amount": 6000
     }
+
   ]
 }

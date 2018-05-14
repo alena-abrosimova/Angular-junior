@@ -30,19 +30,19 @@ export class SystemCommonComponent implements OnInit {
     this.userService.logout();
     this.router.navigate(['/home', 'login']);
   }
- // jobState() {
-    // ослеживание открытого компонента для изменения содержимого sidenav
-  //  this.state = true;
+  jobState() {
+     // ослеживание открытого компонента для изменения содержимого sidenav
+      this.state = true;
   //  if (this.sideNavState === true) {
   //    this.router.navigate(['/system', 'jobs'], {queryParams: {isSideNavOpened: true, checkAll: true}});
   //  } else if (this.sideNavState === false) {
     //  this.router.navigate(['/system', 'jobs'], {queryParams: { checkAll: true}});
    // }
- // }
- // contractState() {
- //   // ослеживание открытого компонента для изменения содержимого sidenav
- //   this.state = false;
- // }
+   }
+  contractState() {
+  // ослеживание открытого компонента для изменения содержимого sidenav
+    this.state = false;
+  }
   // onSideNavState() {
   //  if (this.state === true) {
   //    // передача параметров в подгружаемый компонент в зависимости от состояния sidenav

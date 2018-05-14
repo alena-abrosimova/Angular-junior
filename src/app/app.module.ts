@@ -47,6 +47,7 @@ import {UserCommonModule} from './userCommon/userCommon.module';
 import {SystemCommonModule} from './systemCommon/systemCommon.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AuthenticationGuard} from './shared/services/authentication.guard';
+import {CdkTableModule} from '@angular/cdk/table';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import {AuthenticationGuard} from './shared/services/authentication.guard';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatStepperModule
+    MatStepperModule,
+    CdkTableModule
   ],
   declarations: [
     AppComponent,
@@ -96,37 +98,6 @@ import {AuthenticationGuard} from './shared/services/authentication.guard';
     MatNativeDateModule,
     ReactiveFormsModule,
     FormsModule,
-    MatAutocompleteModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatExpansionModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatStepperModule,
     CommonModule,
     BackendModule,
     UserCommonModule,

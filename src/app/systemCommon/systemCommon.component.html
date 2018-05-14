@@ -3,9 +3,9 @@
       <mat-icon>menu</mat-icon>
     </button>
     <a mat-tab-link class="system-button"
-       [routerLink]="['/system', 'jobs']" [queryParams]="{checkAll: true}"> All jobs </a>
+       [routerLink]="['/system', 'jobs']" [queryParams]="{checkAll: true}" (click)="jobState()"> All jobs </a>
     <a mat-tab-link class="system-button"
-       [routerLink]="['/system', 'contracts']"> Your contracts </a>
+       [routerLink]="['/system', 'contracts']" (click)="contractState()"> Your contracts </a>
     <a mat-tab-link [matMenuTriggerFor]="menu" class="system-tab-menu">
       <mat-icon>face</mat-icon>
     </a>
